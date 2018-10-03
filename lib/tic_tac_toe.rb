@@ -68,8 +68,8 @@ end
   end 
 end 
 
-def full?(board)
-  board.all? do |spot|
+def full?
+  @board.all? do |spot|
     spot == "X" || spot == "O"
   end
 end 
