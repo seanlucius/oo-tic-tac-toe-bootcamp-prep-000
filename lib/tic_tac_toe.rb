@@ -60,6 +60,35 @@ end
     turn_count % 2 == 0 ? "X" : "O"
   end  
   
-  
+  def won?(board)
+  WIN_COMBINATIONS.detect do |combo|
+    board[combo[0]] == board[combo[1]] &&
+    board[combo[1]] == board[combo[2]] &&
+    position_taken?(board, combo[0])
+  end 
+end 
+
+def full?(board)
+  board.all? do |spot|
+    spot == "X" || spot == "O"
+  end
+end 
+
+def draw?(board)
+  !(won?(board)) && full?(board)
+end 
+
+def over?(board)
+  won?(board) || full?(board) || draw?(board)
+end 
+
+def winner(board)
+  if won?(board)
+    winner_combo = won?(board)
+    board[winner_combo[0]]
+  else 
+    nil 
+  end
+end
   
 end 
