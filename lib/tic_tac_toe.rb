@@ -74,18 +74,18 @@ def full?
   end
 end 
 
-def draw?(board)
-  !(won?(board)) && full?(board)
+def draw?
+  !(won?) && full?
 end 
 
-def over?(board)
-  won?(board) || full?(board) || draw?(board)
+def over?
+  won? || full? || draw?
 end 
 
-def winner(board)
-  if won?(board)
-    winner_combo = won?(board)
-    board[winner_combo[0]]
+def winner
+  if won?
+    winner_combo = won?
+    @board[winner_combo[0]]
   else 
     nil 
   end
