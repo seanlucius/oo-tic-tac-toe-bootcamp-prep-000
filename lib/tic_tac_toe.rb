@@ -48,7 +48,7 @@ def turn
     move(index)
     display_board
   else
-    @board.turn
+    turn
   end
 end
 
