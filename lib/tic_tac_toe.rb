@@ -32,12 +32,12 @@ def move(index, player_token = "X")
   @board[index] = player_token
 end
 
-def position_taken?(board, location)
-  board[location] != " " && board[location] != ""
+def position_taken?(index)
+  @board[index] != " " && @board[index] != ""
 end
 
-def valid_move?(board, index)
-  index.between?(0,8) && !position_taken?(board, index)
+def valid_move?(index)
+  index.between?(0,8) && !position_taken?(index)
 end
 
 def turn(board)
