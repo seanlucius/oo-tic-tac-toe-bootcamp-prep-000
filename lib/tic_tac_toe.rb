@@ -91,6 +91,16 @@ def winner
   end
 end
   
-  
+ def play
+  until over?
+  turn
+  end 
+  if won?
+    champ = winner
+    puts "Congratulations #{champ}!"
+  else 
+    puts "Cat's Game!"
+  end 
+end 
   
 end 
